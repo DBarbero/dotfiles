@@ -1,0 +1,19 @@
+...:: SUBIR A PRE ::...
+
+0. IR A CLUSTER DE PRE! --> kubepre
+
+1. git pull origin (branch)
+
+2. Aumentar version en el kubernetes.rc.yaml
+
+3. Aumentar version en publish.sh
+
+4. g aa; g cm "UPDATE to (version)"
+
+5. git tag (version)
+
+6. git push origin (branch); git push --tags
+
+7. ASEGURAR QUE ESTAMOS EN EL CLUSTER DE PRE! --> kubewhere
+
+8. Ejecutar publish.sh

@@ -1,0 +1,36 @@
+...:: DESPLEGAR PROYECTO CON NUEVOS SCRIPTS ::...
+Copiar los archivos:
+    - create_docker.sh
+    - deploy.py
+    - Dockerfile
+    - kubernetes.rc.yaml
+    - update_version.py
+
+Cambiar el Dockerfile según corresponda.
+Cambiar el nombre del proyecto en kubernetes.rc.yaml
+Cambiar el nombre del proyecto y version en create_docker.sh
+Ejecutar deploy.py con los parametros correspondientes
+
+
+...:: CREACIÓN NUEVO PROYECTO EN PRE O PRO ::...
+
+Para crear un proyecto nuevo, primero tendremos que localizar los archivos Dockerfile, kubernetes.rc.yaml, kubernetes.service.yaml y publish.sh.
+
+- kubernetes.rc.yaml: Cambiar nombres (no muy largos) y cambiar el nombre de la imagen.
+- kubernetes.service.yaml: Cambiar nombres (y los puertos si procede).
+- publish.sh: Cambiar nombre docker build y nombre gcloud docker push por el nombre y la versión que tengamos en el replication controller (RC).
+
+A partir de ahi seguir los siguientes pasos:
+
+0. IR AL CLUSTER DE PRE O PRO SEGUN CORRESPONDA!!!!!
+
+1. Crear el replication controller a partir del archivo de configuracion kubernetes.rc.yaml. Para ello: kubectl create -f kubernetes.rc.yaml
+
+2. Crear servicio a partir del archivo de configuracion kubernetes.service.yaml. Para ello:
+kubectl create -f kubernetes.service.yaml
+
+3. Crear servicio expuesto que apunte al servicio creado. Para ello: kubectl expose service (nombre) --name=(nombre) --type=LoadBalancer
+
+4. Ejecutar publish.sh
+
+5. Esperar a que aparezca la ip expuesta. Para ello: kubectl get services -w

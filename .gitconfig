@@ -1,0 +1,42 @@
+[user]
+	name = YOUR_NAME
+	email = YOUR_EMAIL
+[alias]
+    s = status
+    sa = status --ignored
+    co = checkout
+    a = add
+    aa = add --all
+    ap = add --patch
+    c = commit --verbose
+    ca = commit -a
+    cm = commit -m
+    cma = commit -a -m
+    cam = commit --amend
+    ps = push
+    pl = pull
+    cl = clone
+    t = tag
+    ra = remote add
+    rr = remote rm
+    rp = remote prune
+    rpo = remote prune origin
+    b = branch
+    br = branch -r
+    ba = branch -a
+    bs = branch-status
+    bu = branch -u
+    l = log -2
+    t = log --graph --pretty=format:'%C(yellow)%h%Creset%C(auto)%d%Creset %s %Cblue(%an)%Creset %Cgreen(%cr)%Creset' --abbrev-commit --all
+    d = diff
+    dc = diff --cached
+    df = "!f() { git --no-pager diff $@; }; f"
+    dfc = "!f() { git --no-pager diff --cached $@; }; f"
+    f = fetch
+    fa = fetch --all
+    m = merge
+    su = submodule foreach git pull origin master
+    sh = stash
+    sl = stash list
+    sp = stash pop
+    sc = stash clear

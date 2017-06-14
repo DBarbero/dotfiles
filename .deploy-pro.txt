@@ -1,0 +1,9 @@
+...:: SUBIR A PRO ::...
+
+0. IR A CLUSTER DE PRO! --> kubepro
+
+1. Borrar el RC con: kubectl delete -f kubernetes.rc.yaml
+
+2. Crear el nuevo RC con: kubectl create -f kubernetes.rc.yaml
+
+3. CAMBIAR AL CLUSTER DE PRE!!!! --> kubepre
